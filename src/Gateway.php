@@ -43,7 +43,7 @@ class Gateway extends AbstractGateway {
 
 	public function getName()
 	{
-		return 'PayJunction';
+		return 'Braintree';
 	}
 
 	public function getDefaultParameters()

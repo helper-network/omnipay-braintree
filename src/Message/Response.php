@@ -40,4 +40,13 @@ class Response extends AbstractResponse {
 	public function getTransactionId() {
 		return $this->data['transactionId'];
 	}
+
+	public function getStatus(){
+		$status = strtolower($this->data->transaction->status);
+		if($status === 'settled' || $status === 'settling'){
+			return 'settled';
+		}
+
+		return 'submitted';
+	}
 }

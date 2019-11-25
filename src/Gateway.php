@@ -2,6 +2,7 @@
 
 namespace Omnipay\Braintree;
 
+use Omnipay\Braintree\Message\StatusRequest;
 use Omnipay\Common\AbstractGateway;
 use Omnipay\Braintree\Message\AuthorizeRequest;
 use Omnipay\Braintree\Message\CaptureRequest;
@@ -123,6 +124,10 @@ class Gateway extends AbstractGateway {
 	public function retrievePayment(array $parameters = []) {
 		return $this->createRequest(RetrievePaymentRequest::class, $parameters);
 
+	}
+
+	public function getSTatus(array $parameters = []) {
+		return $this->createRequest(StatusRequest::class, $parameters);
 	}
 
 }

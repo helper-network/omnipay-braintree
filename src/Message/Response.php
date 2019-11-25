@@ -2,8 +2,6 @@
 
 namespace Omnipay\Braintree\Message;
 
-use Braintree\Result\Error;
-use Braintree\Result\Successful;
 use Omnipay\Common\Message\AbstractResponse;
 
 class Response extends AbstractResponse {
@@ -31,6 +29,9 @@ class Response extends AbstractResponse {
 		return null;
 	}
 
+	public function getAmount() {
+		$this->data->amount;
+	}
 
 	public function getTransactionReference() {
 		$this->data->customer->id;
